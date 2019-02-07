@@ -1,0 +1,1 @@
+react-native link react-native-sound-player
