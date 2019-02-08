@@ -1,3 +1,7 @@
+Projet de blindtest
+
+https://github.com/PhakkyoC/blindtestReact
+
 Pour l'instalation de l'application il faut :
 
 - Lancer la commande npm install

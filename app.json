@@ -24,6 +24,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description":"Projet de blindtest avec expo. Git : https://github.com/PhakkyoC/blindtestReact \n Voici la playlist par défaut : https://open.spotify.com/user/anthony.gerbenne/playlist/3qBF4LlxemZamIutK1LFYm?si=ligAeVMFQvqa39zVqgXxgw"
   }
 }
