@@ -35,13 +35,20 @@ class QuizzForm extends React.Component {
                 <View style={styles.container}>
 
                     {/*à center et ajouter un margin bottom*/}
-                    <Text>Trouver le nom de la musique</Text>
+                    
+                    <Text>Trouver le nom du</Text>
 
                     {/*à mettre en haut a droite*/}
                     <Text>Votre score : {score}</Text>
 
                     {/*à mettre en haut a droite*/}
                     {textError}
+
+                     {/*center width 80%*/}
+                     <TextInput style={styles.formText}
+                               onChangeText={(text) => this.props.updateText(text)}
+                               value={this.props.text}
+                    />
 
                     {/*ajouter un margin bottom*/}
                     <VideoPlayer
@@ -58,18 +65,14 @@ class QuizzForm extends React.Component {
                         debug={false}
                     />
 
-                    {/*center width 80%*/}
-                    <TextInput style={styles.formText}
-                               onChangeText={(text) => this.props.updateText(text)}
-                               value={this.props.text}
-                    />
+                   
 
                     {/*center width 80%*/}
                     <TouchableOpacity
                         style={styles.button}
                         onPress={this.sendResponse}
                     >
-                        <Text>Vérifier</Text>
+                        <Text style={{ color: '#fff'}}>Vérifier</Text>
                     </TouchableOpacity>
                 </View>
             );
@@ -97,17 +100,26 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         flexDirection:'column',
         flexWrap:'wrap',
+        justifyContent: 'center', 
+        alignItems: 'center'
     },
     formText: {
         borderColor: 'gray',
         borderWidth: 1,
         height: 40,
+        width: 300,
+        marginTop: 10,
+        marginBottom: 10,
         padding: 10,
+        borderRadius: 50,
     },
     button: {
         alignItems: 'center',
-        backgroundColor: '#DDDDDD',
-        padding: 10
+        backgroundColor: '#1ED760',
+        padding: 20,
+        marginTop: 20,
+        borderRadius: 50,
+        width: 200,
     },
 });
 
