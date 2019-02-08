@@ -11,4 +11,6 @@ Pour l'instalation de l'application il faut :
 
 
 - Il est possible de modifier la playlist du blind test en récupérent l'id de la playlist dans l'URI spotify
-et il suffit de modifier la variable playlistId du fichier constvar.js.
+et il suffit de modifier la variable playlistId du fichier constvar.js
+
+- Voici la playlist par défaut : https://open.spotify.com/user/anthony.gerbenne/playlist/3qBF4LlxemZamIutK1LFYm?si=ligAeVMFQvqa39zVqgXxgw
