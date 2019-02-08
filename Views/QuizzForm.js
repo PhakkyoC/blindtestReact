@@ -33,24 +33,18 @@ class QuizzForm extends React.Component {
             }
             return (
                 <View style={styles.container}>
-
-                    {/*à center et ajouter un margin bottom*/}
                     
-                    <Text>Trouver le nom du</Text>
+                    <Text>Trouver le nom {this.props.type=="name"?" du titre":"de l'auteur"} de la musique</Text>
 
-                    {/*à mettre en haut a droite*/}
                     <Text>Votre score : {score}</Text>
 
-                    {/*à mettre en haut a droite*/}
                     {textError}
 
-                     {/*center width 80%*/}
                      <TextInput style={styles.formText}
                                onChangeText={(text) => this.props.updateText(text)}
                                value={this.props.text}
                     />
 
-                    {/*ajouter un margin bottom*/}
                     <VideoPlayer
                         videoProps={{
                             shouldPlay: true,
@@ -65,9 +59,6 @@ class QuizzForm extends React.Component {
                         debug={false}
                     />
 
-                   
-
-                    {/*center width 80%*/}
                     <TouchableOpacity
                         style={styles.button}
                         onPress={this.sendResponse}
@@ -80,7 +71,7 @@ class QuizzForm extends React.Component {
         else if (isFinished) {
             return (
                 <View style={styles.container}>
-                    <Text> Bravo vous avez fini votre socre est : {score}</Text>
+                    <Text> Bravo vous avez fini votre socre est de : {score}</Text>
                 </View>
             );
         }
