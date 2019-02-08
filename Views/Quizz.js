@@ -7,7 +7,10 @@ import { Provider, connect } from 'react-redux';
 import QuizzAPP from '../Reducer';
 import QuizzForm from './QuizzForm';
 
-const token = "BQCZRFEKXCKuTRvauxDxgLt2P5WzivbwNhv0AgKtXtebYpsOmrMphTvOrzd6cq586B_zUna-4NupBYPXMbNvC_WRLL2ISZmlkDqlR2NlgA1zev-c0ZYL0Vn_fVAAPbhNYb6GfUh7Swy4Tcj1FZNQmWXAM3l_Il7b-R2ggv-BtLxYVVMXOzLDOjdj0RrD7aMvU9EyYypDJncKo8XiGbaUwjz9_7bYDUSxFBK0DC2WaeJIiTp35BKI6nfEgexEVsvX2EnIPU5zmcLF0LOIzw"
+import {token} from "../constvar";
+
+console.log("le token"+token);
+
 
 const client = axios.create({
     baseURL: 'https://api.spotify.com/v1/playlists/',

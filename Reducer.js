@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux'
+import {playlistId} from './constvar';
+
 export const GET_SONG = 'GET_SONG';
 export const GET_SONG_SUCCESS = 'GET_SONG_SUCCESS';
 export const GET_SONG_FAIL = 'GET_SONG_FAIL';
@@ -24,7 +26,7 @@ function formState(state = {inputText:"",errText:""},action) {
 }
 
 
-function game(state = {score:0,current:0,tryRep:10,err:false},action) {
+function game(state = {score:0,current:0,tryRep:10,err:false,isFinished:false},action) {
     switch (action.type) {
         case INIT:
             state = {score:0,current:0,tryRep:10,err:false};
@@ -41,6 +43,10 @@ function game(state = {score:0,current:0,tryRep:10,err:false},action) {
                 if (state.tryRep>1){
                     state.tryRep = state.tryRep-1;
                 }
+            }
+
+            if (state.current==action.longeur){
+                state.isFinished=true;
             }
 
             return { ...state};
@@ -85,7 +91,7 @@ export function getSongs() {
         type: GET_SONG,
         payload: {
             request: {
-                url : "37i9dQZEVXbIPWwFssbupI",
+                url : playlistId,
             }
         }
     };
@@ -100,7 +106,7 @@ export function checkSong(inputValue,type) {
         response = this.songs[this.current].artist;
     }
 
-    return {type:CHECK_SONG,userInput:inputValue,response:response}
+    return {type:CHECK_SONG,userInput:inputValue,response:response,longeur:this.songs.length}
 }
 
 export function initGame() {

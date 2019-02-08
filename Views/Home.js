@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default class HomeScreen extends Component {
     static navigationOptions = {
@@ -9,18 +9,18 @@ export default class HomeScreen extends Component {
         const {navigate} = this.props.navigation;
         return (
                 <View style={styles.container}>
-                    <Button
-                        title="Blind test par artist"
-                        color="#841584"
-                        accessibilityLabel="Blind test par artist"
+                    <TouchableOpacity
+                        style={styles.button}
                         onPress={() => navigate('Quizz', {type: 'name'})}
-                    />
-                    <Button
-                        title="Blind test par titre"
-                        color="#4286f4"
-                        accessibilityLabel="Blind test par titre"
+                    >
+                    <Text>Blind test par artist</Text>
+                </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.button}
                         onPress={() => navigate('Quizz', {type: 'author'})}
-                    />
+                    >
+                        <Text>Blind test par titre</Text>
+                    </TouchableOpacity>
                 </View>
         );
     }
@@ -33,5 +33,10 @@ const styles = StyleSheet.create({
         marginTop: 50,
         flexDirection:'column',
         flexWrap:'wrap',
+    },
+    button: {
+        alignItems: 'center',
+        backgroundColor: '#DDDDDD',
+        padding: 10
     },
 });
